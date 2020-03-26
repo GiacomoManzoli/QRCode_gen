@@ -22,11 +22,6 @@ export class JOmnisWrapper {
      * @param {String} [omnisCallbackName] [OPZIONALE] Nome del metodo di callback di Omnis
      */
     sendEvent(evName: string, evData?: string | any, callId?: number, omnisCallbackName?: string) {
-        /** 2018.06.29: Aggiunto parametro callId
-         * Serve per capire quando effettivamente un metodo richiesto da OMNIS è stato completato, in modo da
-         * facilitare la gestione dei vari Working Message.
-         * Codice Modifica: 2018.06.29.CID
-         */
         console.info(`[jOmnis] sendEvent ${evName}`, evData)
         var message: OSMessage = {
             evType: evName,

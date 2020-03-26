@@ -1,3 +1,8 @@
 {
-    "cSpell.words": ["ESNEXT", "funct"]
+    "cSpell.words": [
+        "ESNEXT",
+        "funct",
+        "qrcode"
+    ],
+    "typescript.tsdk": "node_modules/typescript/lib"
 }

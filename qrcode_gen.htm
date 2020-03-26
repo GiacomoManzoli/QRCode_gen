@@ -10,9 +10,19 @@
         <script type="text/javascript" src="libs/omnis/omn_list_base.js"></script>
         <script type="text/javascript" src="libs/omnis/omnishtmlcontrol.js"></script>
         <script type="text/javascript" src="libs/omnis/jOmnisHotSwap.js"></script>
+        <style>
+            html,
+            body,
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
     </head>
 
-    <body class="geEditor">
+    <body>
+        <img id="qrcode-image" />
+
         <script type="text/javascript">
             var scriptBasePath =
                 document.location.protocol +
@@ -35,7 +45,7 @@
                 document.write(
                     `<script type="text/javascript" src="${
                         window.ENV.basePath
-                    }/dist/8draw.bundle.js?_v=${new Date().getTime()}"><\/script>`
+                    }/dist/qrcode_gen.bundle.js?_v=${new Date().getTime()}"><\/script>`
                 )
             } else {
                 console.warn("ENVIRONMENT: PROD")
