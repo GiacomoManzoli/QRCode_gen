@@ -30,7 +30,7 @@ publishDir("./libs", outDir)
 
 // file singoli
 publishFile("./qrcode_gen.htm", outDir)
-// publishFile("./jOmnisHotSwap.js", outDir)
+publishFile("./qrcode_gen.txt", outDir)
 
 console.log()
 console.log(`Pubblicazione completata!`)
