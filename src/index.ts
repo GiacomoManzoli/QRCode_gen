@@ -32,4 +32,20 @@ socketClient.on("act_EncodeText", async request => {
         })
 })
 
+socketClient.on("act_EncodeTextBatch", async request => {
+    const { arrayJSON } = request.message.data
+    const textArray: string[] = JSON.parse(arrayJSON)
+    console.log("act_EncodeTextBatch", textArray)
+
+    const qrPromises = textArray.map(t => QRCode.toDataURL(t, { width: 256, margin: 0 }))
+    Promise.all(qrPromises)
+        .then(data => {
+            request.return({ qrCodes: data })
+        })
+        .catch(err => {
+            console.error(err)
+            request.returnError(-2, "Errore nella generazione dei QRCode", { error: err })
+        })
+})
+
 socketClient.open()
